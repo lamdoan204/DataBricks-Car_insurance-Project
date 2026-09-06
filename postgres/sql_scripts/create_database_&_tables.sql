@@ -1,7 +1,7 @@
 -- 1. Tạo Database mới
 \echo '---------------------------------------'
 \echo 'Bắt đầu tạo Database car_insurance_db '
-CREATE DATABASE if not exists car_insurance_db;
+CREATE DATABASE car_insurance_db;
 \echo 'Tạo Database: car_insurance_db thành công'
 
 
