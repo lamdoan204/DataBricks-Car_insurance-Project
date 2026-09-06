@@ -1,14 +1,14 @@
 -- 1. Tạo Database mới
 \echo '---------------------------------------'
 \ehco 'Bắt đầu tạo Database car_insurance_db '
-CREATE DATABASE car_insurance_db;
+CREATE DATABASE if not exist car_insurance_db;
 \echo 'Tạo Database: car_insurance_db thành công'
 
 
 \c car_insurance_db
 \echo '---------------------------------------'
 \ehco 'Bắt đầu tạo Table customers '
-CREATE TABLE customers (
+CREATE TABLE if not exist customers (
     customer_id NUMERIC(10, 1) PRIMARY KEY, 
     name VARCHAR(150),                       
     date_of_birth DATE,                      
@@ -18,8 +18,8 @@ CREATE TABLE customers (
 );
 \echo 'Tạo Table: customers thành công'
 \echo '---------------------------------------'
-\ehco 'Bắt đầu tạo Table policies '
-CREATE TABLE policies (
+\echo 'Bắt đầu tạo Table policies '
+CREATE TABLE if not exist policies (
     policy_no VARCHAR(50) PRIMARY KEY,       
     cust_id NUMERIC(10, 1) NOT NULL,          
     policy_type VARCHAR(20),                  
@@ -45,7 +45,7 @@ CREATE TABLE policies (
 
 \echo '---------------------------------------'
 \ehco 'Bắt đầu tạo Table insurance_claims '
-CREATE TABLE insurance_claims (
+CREATE TABLE if not exist insurance_claims (
 
     claim_no VARCHAR(50) PRIMARY KEY,
     policy_no VARCHAR(50) NOT NULL,
