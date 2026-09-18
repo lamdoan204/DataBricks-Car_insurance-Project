@@ -1,0 +1,27 @@
+from pyspark import pipelines as dp
+from pyspark.sql.functions import col, count, count_if, from_json
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, TimestampType
+
+# This file defines a sample transformation.
+# Edit the sample below or add new transformations
+# using "+ Add" in the file browser.
+
+bootstrap_server = "3.236.154.228:19092,3.236.154.228:19094"
+
+payload_schema = StructType([
+    StructField("chassis_no", StringType(), True),
+    StructField("latitude", DoubleType(), True),
+    StructField("longitude", DoubleType(), True),
+    StructField("event_timestamp", TimestampType(), True),
+    StructField("speed", DoubleType(), True),
+])
+@dlt.table(
+    name="telematics"
+)
+def bronze_table():
+    raw_df = spark.readStream.format("kafka") \
+        .option("kafka.bootstrap.servers", bootstrap_server) \
+        .option("subscribe", "car_telematics") \
+        .option("startingOffsets", "latest") \
+        .load()
+    return raw_df
