@@ -187,5 +187,5 @@ transformation process:
 
 The data platform follows the **Medallion Architecture**, which separates
 data processing into three logical layers manage by unity catalog:
-![unity catalog](./images/proof/Medallion_architecture.png)
+![unity catalog](./images/proof/Medallion_Architecture.png)
 
