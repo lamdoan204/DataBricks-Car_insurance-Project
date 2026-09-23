@@ -37,3 +37,12 @@ The project focuses on learning and experimenting with:
 - Integrating different AWS services and data technologies into a unified Data Engineering architecture
 
 Through this project, the goal is to understand not only how individual technologies work, but also **how they can be combined to build a complete data platform from data ingestion to downstream consumption**.
+
+## 🏗️ Architecture
+
+The overall architecture of the project is designed to ingest data from
+multiple sources, process and transform it in Databricks using the
+**Medallion Architecture**, and provide a foundation for downstream
+analytics and AI/ML use cases.
+
+![Project Architecture](./images/architecture/Car_Insurance_Architecture.drawio.png)
