@@ -79,7 +79,7 @@ DataBricks-Car_insurance-Project/
 ├── README.MD
 ├── build.sh -- bash build.sh init create kafka brokers, topic and starting send message to kafka 
 └── docker-compose.yml 
-
+```
 ## 🏗️ Architecture
 
 The overall architecture of the project is designed to ingest data from
