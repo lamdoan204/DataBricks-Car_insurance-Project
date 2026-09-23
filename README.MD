@@ -160,15 +160,32 @@ environment.
 ![Raw Kafka Data](./images/proof/data_extract_from_raw_kafka_data.png)
 
 ---
+### 6. Data Quality During Transformation
 
-### 6. Medallion Architecture
+Data quality checks are applied directly during the data transformation
+process to ensure that the data meets the expected business and technical
+requirements before being passed to downstream layers.
+
+The project uses **Databricks Delta Live Tables (DLT) expectations** to
+define validation rules for transformed data.
+
+The quality constraints cover several aspects of the data, including:
+
+- Required fields must not contain `NULL` values
+- Data types must match the expected schema
+- Customer IDs must be unique
+- Names are validated and normalized
+- Date fields must contain valid date values
+- Location fields are validated and cleaned
+- ZIP codes must contain valid integer values
+
+For example, the following DLT expectations are applied during the
+transformation process:
+![data quality](./images/proof/quality_contrains_data_with_dlt.png)
+
+### 7. Medallion Architecture
 
 The data platform follows the **Medallion Architecture**, which separates
-data processing into three logical layers:
+data processing into three logical layers manage by unity catalog:
+![unity catalog](./images/proof/Medallion_architecture.png)
 
-```text
-Bronze
-   ↓
-Silver
-   ↓
-Gold
