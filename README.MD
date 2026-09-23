@@ -1,4 +1,4 @@
-# End-to-End Car Insurance Data Engineering Platform
+# Car Insurance Data Engineering Platform
 
 ## 📌 Introduction
 
@@ -46,3 +46,4 @@ multiple sources, process and transform it in Databricks using the
 analytics and AI/ML use cases.
 
 ![Project Architecture](./images/architecture/Car_Insurance_Architecture.drawio.png)
+
