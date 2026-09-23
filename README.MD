@@ -188,4 +188,21 @@ transformation process:
 The data platform follows the **Medallion Architecture**, which separates
 data processing into three logical layers manage by unity catalog:
 ![unity catalog](./images/proof/Medallion_Architecture.png)
+### 8. Analytics Dashboard
+
+After completing the data ingestion, transformation, and data quality
+processes, the processed data from the **Gold layer** is used to build
+an analytics dashboard in Databricks.
+
+The dashboard provides a high-level overview of the processed insurance
+data and demonstrates how the data platform can support downstream
+analytics and business insights.
+
+The dashboard is built on top of the curated datasets produced by the
+data pipeline, allowing the analytics layer to consume data that has
+already gone through the Bronze → Silver → Gold transformation process.
+
+![Analytics Dashboard](./images/proof/Dashboard.png)
+
+
 
