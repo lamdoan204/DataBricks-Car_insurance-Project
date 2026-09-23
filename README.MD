@@ -38,6 +38,48 @@ The project focuses on learning and experimenting with:
 
 Through this project, the goal is to understand not only how individual technologies work, but also **how they can be combined to build a complete data platform from data ingestion to downstream consumption**.
 
+📂 Project Structure
+
+The repository is organized into several directories, with each directory
+serving a specific role in the end-to-end Data Engineering pipeline.
+
+```text
+DataBricks-Car_insurance-Project/
+│
+├── code_scripts_on_Databricks/
+│   ├── 1_ingestions/  -- code ingesttion from multiple sources
+│   │   └── Data ingestion scripts and notebooks
+│   │
+│   └── 2_transformations/ -- code transformation
+│       └── Data transformation and processing scripts
+│
+├── images/ -- images for proof and architecture image
+│   └── Project documentation, architecture diagrams, and screenshots
+│
+├── object_data/ 
+│   └── Object and image data used by the project
+│
+├── postgres/ 
+│   ├── data/ 
+│   │   └── PostgreSQL source data
+│   │
+│   └── sql_scripts/ -- code sql create, insert data and grant permission for user
+│       └── SQL scripts for database creation and data preparation
+│
+├── producer/
+│   ├── data/
+│   │   └── Data used by the Kafka producer
+│   │
+│   └── main.py -- code emulation producer send messages to kafka
+│       └── Kafka producer implementation
+│
+├── .gitattributes
+├── .gitignore
+├── Note - Data Engineer Project.docx
+├── README.MD
+├── build.sh -- bash build.sh init create kafka brokers, topic and starting send message to kafka 
+└── docker-compose.yml 
+
 ## 🏗️ Architecture
 
 The overall architecture of the project is designed to ingest data from
@@ -46,6 +88,7 @@ multiple sources, process and transform it in Databricks using the
 analytics and AI/ML use cases.
 
 ![Project Architecture](./images/architecture/Car_Insurance_Architecture.drawio.png)
+
 ## 🔨 Development Process
 
 The project was developed incrementally, starting from the infrastructure
